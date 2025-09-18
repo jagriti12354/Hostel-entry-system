@@ -1,0 +1,7 @@
+{
+  "name": "Hostel Biometric Entry System",
+  "description": "A web application to manage student entry and exit from a hostel using a simulated biometric system. It provides separate interfaces for guards and admins, tracks student presence, and displays logs in a sheet-like format.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

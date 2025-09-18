@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hostel Entry System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'primary': '#30D158', // A vibrant green for interactive elements
+              'gray-bg': '#121212', // Main background color
+              'gray-surface': '#1e1e1e', // Card and component backgrounds
+              'gray-border': '#2d2d2d', // Borders and dividers
+              'gray-light': '#3c3c3e', // Lighter gray for hover states
+              'text-primary': '#F5F5F7', // Primary text (off-white)
+              'text-secondary': '#8E8E93', // Secondary text (light gray)
+              'text-tertiary': '#636366', // Tertiary/placeholder text
+              'status-green': '#30D158',
+              'status-yellow': '#FFD60A',
+            },
+            fontFamily: {
+              sans: [
+                '-apple-system',
+                'BlinkMacSystemFont',
+                '"Segoe UI"',
+                'Roboto',
+                '"Helvetica Neue"',
+                'Arial',
+                '"Noto Sans"',
+                'sans-serif',
+              ],
+            },
+            animation: {
+              'pulse-fast': 'pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            }
+          }
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <script src="https://unpkg.com/html5-qrcode" type="text/javascript"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-bg">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
