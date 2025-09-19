@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo, useEffect } from 'react';
 import Header from './Header';
 import { UserRole, Student, StudentStatus } from '../types';
@@ -5,7 +6,7 @@ import StudentRegistration from './StudentRegistration';
 import StudentLogSheet from './StudentLogSheet';
 import BridgeApplication from './BridgeApplication';
 import { useData } from '../context/AppContext';
-import { HomeIcon, UserAddIcon, TableIcon, UserGroupIcon, CheckCircleIcon, XCircleIcon, QrcodeIcon, DocumentDownloadIcon, ChipIcon } from './icons/Icons';
+import { HomeIcon, UserAddIcon, TableIcon, UserGroupIcon, CheckCircleIcon, XCircleIcon, QrcodeIcon, DocumentDownloadIcon } from './icons/Icons';
 
 declare const QRCode: any;
 
@@ -128,8 +129,6 @@ const AdminDashboard: React.FC = () => {
                 return <StudentLogSheet />;
             case 'manage':
                 return <ManageStudents />;
-            case 'bridge':
-                return <BridgeApplication />;
             case 'dashboard':
             default:
                 return (
@@ -184,7 +183,6 @@ const AdminDashboard: React.FC = () => {
                         <TabButton tabId="register" icon={<UserAddIcon className="h-5 w-5"/>} label="Register" />
                         <TabButton tabId="logs" icon={<TableIcon className="h-5 w-5"/>} label="Logs" />
                         <TabButton tabId="manage" icon={<UserGroupIcon className="h-5 w-5"/>} label="Manage" />
-                        <TabButton tabId="bridge" icon={<ChipIcon className="h-5 w-5"/>} label="Bridge Sim" />
                     </nav>
                 </div>
                 <div>

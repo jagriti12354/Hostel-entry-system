@@ -1,7 +1,8 @@
+
 import React, { useState, useEffect, useCallback } from 'react';
 import { useData } from '../context/AppContext';
 import { Student } from '../types';
-import { UserIcon, OfficeBuildingIcon, CheckCircleIcon, DocumentDownloadIcon, PhotographIcon } from './icons/Icons';
+import { UserIcon, OfficeBuildingIcon, CheckCircleIcon, DocumentDownloadIcon, PhotographIcon, FingerprintIcon } from './icons/Icons';
 
 declare const QRCode: any;
 
@@ -10,6 +11,8 @@ const StudentRegistration: React.FC = () => {
     const [room, setRoom] = useState('');
     const [photo, setPhoto] = useState<File | null>(null);
     const [photoPreview, setPhotoPreview] = useState<string | null>(null);
+    const [fingerprintScanned, setFingerprintScanned] = useState(false);
+    const [isScanningFingerprint, setIsScanningFingerprint] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [registeredStudent, setRegisteredStudent] = useState<Student | null>(null);
     const [qrCodeUrl, setQrCodeUrl] = useState('');
@@ -46,9 +49,18 @@ const StudentRegistration: React.FC = () => {
         handleFileChange(e.dataTransfer.files);
     }, []);
 
+    const handleFingerprintScan = () => {
+        setIsScanningFingerprint(true);
+        setFingerprintScanned(false);
+        setTimeout(() => {
+            setIsScanningFingerprint(false);
+            setFingerprintScanned(true);
+        }, 2000);
+    };
+
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        if (!name || !room || !photoPreview) return;
+        if (!name || !room || !photoPreview || !fingerprintScanned) return;
         
         setIsSubmitting(true);
         setRegisteredStudent(null);
@@ -62,6 +74,7 @@ const StudentRegistration: React.FC = () => {
             setRoom('');
             setPhoto(null);
             setPhotoPreview(null);
+            setFingerprintScanned(false);
             setIsSubmitting(false);
         }, 1000);
     };
@@ -96,6 +109,33 @@ const StudentRegistration: React.FC = () => {
                         </label>
                     </div>
 
+                    <div>
+                        <div className={`flex items-center justify-between p-3 rounded-lg border ${fingerprintScanned ? 'border-status-green bg-status-green/10' : 'border-gray-border bg-gray-light/50'} transition-colors`}>
+                            <div className="flex items-center gap-3">
+                                <FingerprintIcon className={`h-8 w-8 ${fingerprintScanned ? 'text-status-green' : 'text-text-tertiary'}`} />
+                                <div>
+                                    <p className={`font-semibold ${fingerprintScanned ? 'text-text-primary' : 'text-text-secondary'}`}>
+                                        {fingerprintScanned ? 'Fingerprint Captured' : 'Biometric Data'}
+                                    </p>
+                                    <p className="text-xs text-text-tertiary">
+                                        {fingerprintScanned ? 'Ready for registration.' : 'Required for new students.'}
+                                    </p>
+                                </div>
+                            </div>
+                            {!fingerprintScanned && (
+                                <button
+                                    type="button"
+                                    onClick={handleFingerprintScan}
+                                    disabled={isScanningFingerprint}
+                                    className="px-4 py-2 text-sm font-semibold bg-gray-light text-text-primary rounded-md hover:opacity-80 transition-opacity disabled:opacity-50"
+                                >
+                                    {isScanningFingerprint ? 'Scanning...' : 'Scan Now'}
+                                </button>
+                            )}
+                            {fingerprintScanned && <CheckCircleIcon className="h-6 w-6 text-status-green" />}
+                        </div>
+                    </div>
+
                      <div className="relative">
                          <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                             <UserIcon className="h-5 w-5 text-text-tertiary" />
@@ -124,7 +164,7 @@ const StudentRegistration: React.FC = () => {
                     </div>
                     <button 
                         type="submit"
-                        disabled={isSubmitting || !name || !room || !photo}
+                        disabled={isSubmitting || !name || !room || !photo || !fingerprintScanned}
                         className="w-full py-3 px-4 bg-primary text-white font-semibold rounded-md hover:opacity-90 transition-colors disabled:bg-gray-light disabled:text-text-tertiary"
                     >
                         {isSubmitting ? 'Registering...' : 'Register Student'}
