@@ -1,10 +1,9 @@
-
 import React from 'react';
-import { AppProvider, useAuth } from './context/AppContext';
-import Login from './components/Login';
-import AdminDashboard from './components/AdminDashboard';
-import GuardDashboard from './components/GuardDashboard';
-import { UserRole } from './types';
+import { AppProvider, useAuth } from './context/AppContext.tsx';
+import Login from './components/Login.tsx';
+import AdminDashboard from './components/AdminDashboard.tsx';
+import GuardDashboard from './components/GuardDashboard.tsx';
+import { UserRole } from './types.ts';
 
 const AppContent: React.FC = () => {
     const { user } = useAuth();

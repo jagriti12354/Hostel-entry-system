@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext, ReactNode, useCallback } from 'react';
-import { UserRole, Student, LogEntry, StudentStatus } from '../types';
-import { ADMIN_USERNAME, ADMIN_PASSWORD, GUARD_USERNAME, GUARD_PASSWORD, INITIAL_STUDENTS, INITIAL_LOGS } from '../constants';
+import { UserRole, Student, LogEntry, StudentStatus } from '../types.ts';
+import { ADMIN_USERNAME, ADMIN_PASSWORD, GUARD_USERNAME, GUARD_PASSWORD, INITIAL_STUDENTS, INITIAL_LOGS } from '../constants.ts';
 
 interface User {
     username: string;

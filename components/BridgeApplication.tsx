@@ -1,9 +1,8 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
-import { useData } from '../context/AppContext';
-import { Student, StudentStatus } from '../types';
-import { ChipIcon, FingerprintIcon } from './icons/Icons';
-import { DESTINATIONS } from '../constants';
+import { useData } from '../context/AppContext.tsx';
+import { Student, StudentStatus } from '../types.ts';
+import { ChipIcon, FingerprintIcon } from './icons/Icons.tsx';
+import { DESTINATIONS } from '../constants.ts';
 
 type ActivityLog = {
     id: number;

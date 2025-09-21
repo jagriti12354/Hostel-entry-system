@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
-import { useData } from '../context/AppContext';
-import { Student } from '../types';
-import { UserIcon, OfficeBuildingIcon, CheckCircleIcon, DocumentDownloadIcon, PhotographIcon, FingerprintIcon } from './icons/Icons';
+import { useData } from '../context/AppContext.tsx';
+import { Student } from '../types.ts';
+import { UserIcon, OfficeBuildingIcon, CheckCircleIcon, DocumentDownloadIcon, PhotographIcon, FingerprintIcon } from './icons/Icons.tsx';
 
 declare const QRCode: any;
 

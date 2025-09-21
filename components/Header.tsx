@@ -1,8 +1,7 @@
-
 import React from 'react';
-import { useAuth } from '../context/AppContext';
-import { FingerprintIcon, LogoutIcon } from './icons/Icons';
-import { UserRole } from '../types';
+import { useAuth } from '../context/AppContext.tsx';
+import { FingerprintIcon, LogoutIcon } from './icons/Icons.tsx';
+import { UserRole } from '../types.ts';
 
 interface HeaderProps {
     role: UserRole;

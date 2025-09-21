@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { useData } from '../context/AppContext';
-import { LogEntry } from '../types';
-import { ArrowSmRightIcon, ArrowSmLeftIcon, DocumentDownloadIcon, CalendarIcon } from './icons/Icons';
+import { useData } from '../context/AppContext.tsx';
+import { LogEntry } from '../types.ts';
+import { ArrowSmRightIcon, ArrowSmLeftIcon, DocumentDownloadIcon, CalendarIcon } from './icons/Icons.tsx';
 
 const StudentLogSheet: React.FC = () => {
     const { logs } = useData();

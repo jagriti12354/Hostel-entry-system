@@ -1,7 +1,6 @@
-
 import React, { useState } from 'react';
-import { useAuth } from '../context/AppContext';
-import { FingerprintIcon, LockClosedIcon, UserIcon, ArrowRightIcon } from './icons/Icons';
+import { useAuth } from '../context/AppContext.tsx';
+import { FingerprintIcon, LockClosedIcon, UserIcon, ArrowRightIcon } from './icons/Icons.tsx';
 
 const Login: React.FC = () => {
     const [username, setUsername] = useState('');

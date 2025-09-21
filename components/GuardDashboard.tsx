@@ -1,10 +1,9 @@
-
 import React, { useState, useMemo, useCallback, useEffect, useRef } from 'react';
-import { useData } from '../context/AppContext';
-import { UserRole, Student, StudentStatus } from '../types';
-import Header from './Header';
-import { FingerprintIcon, CheckCircleIcon, XCircleIcon, UserGroupIcon, SearchIcon, QrcodeIcon, CameraIcon } from './icons/Icons';
-import { DESTINATIONS } from '../constants';
+import { useData } from '../context/AppContext.tsx';
+import { UserRole, Student, StudentStatus } from '../types.ts';
+import Header from './Header.tsx';
+import { FingerprintIcon, CheckCircleIcon, XCircleIcon, UserGroupIcon, SearchIcon, QrcodeIcon, CameraIcon } from './icons/Icons.tsx';
+import { DESTINATIONS } from '../constants.ts';
 
 declare const Html5Qrcode: any;
 

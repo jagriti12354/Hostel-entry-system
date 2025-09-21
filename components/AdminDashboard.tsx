@@ -1,12 +1,11 @@
-
 import React, { useState, useMemo, useEffect } from 'react';
-import Header from './Header';
-import { UserRole, Student, StudentStatus } from '../types';
-import StudentRegistration from './StudentRegistration';
-import StudentLogSheet from './StudentLogSheet';
-import BridgeApplication from './BridgeApplication';
-import { useData } from '../context/AppContext';
-import { HomeIcon, UserAddIcon, TableIcon, UserGroupIcon, CheckCircleIcon, XCircleIcon, QrcodeIcon, DocumentDownloadIcon } from './icons/Icons';
+import Header from './Header.tsx';
+import { UserRole, Student, StudentStatus } from '../types.ts';
+import StudentRegistration from './StudentRegistration.tsx';
+import StudentLogSheet from './StudentLogSheet.tsx';
+import BridgeApplication from './BridgeApplication.tsx';
+import { useData } from '../context/AppContext.tsx';
+import { HomeIcon, UserAddIcon, TableIcon, UserGroupIcon, CheckCircleIcon, XCircleIcon, QrcodeIcon, DocumentDownloadIcon } from './icons/Icons.tsx';
 
 declare const QRCode: any;
 
