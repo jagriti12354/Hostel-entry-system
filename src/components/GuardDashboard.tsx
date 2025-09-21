@@ -5,8 +5,8 @@ import { UserRole, Student, StudentStatus } from '../types';
 import Header from './Header';
 import { FingerprintIcon, CheckCircleIcon, XCircleIcon, UserGroupIcon, SearchIcon, QrcodeIcon, CameraIcon } from './icons/Icons';
 import { DESTINATIONS } from '../constants';
+import { Html5Qrcode } from "html5-qrcode";
 
-declare const Html5Qrcode: any;
 
 const ScanResultCard: React.FC<{ student: Student; action: 'ENTRY' | 'EXIT' }> = ({ student, action }) => {
     const actionText = action === 'ENTRY' ? 'Checked In' : 'Checked Out';

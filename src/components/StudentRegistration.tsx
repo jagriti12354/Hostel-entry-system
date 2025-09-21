@@ -3,8 +3,8 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useData } from '../context/AppContext';
 import { Student } from '../types';
 import { UserIcon, OfficeBuildingIcon, CheckCircleIcon, DocumentDownloadIcon, PhotographIcon, FingerprintIcon } from './icons/Icons';
+import QRCode from 'qrcode';
 
-declare const QRCode: any;
 
 const StudentRegistration: React.FC = () => {
     const [name, setName] = useState('');

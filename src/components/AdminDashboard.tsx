@@ -6,8 +6,8 @@ import StudentRegistration from './StudentRegistration';
 import StudentLogSheet from './StudentLogSheet';
 import { useData } from '../context/AppContext';
 import { HomeIcon, UserAddIcon, TableIcon, UserGroupIcon, CheckCircleIcon, XCircleIcon, QrcodeIcon, DocumentDownloadIcon } from './icons/Icons';
+import QRCode from 'qrcode';
 
-declare const QRCode: any;
 
 const StudentDetailModal: React.FC<{ student: Student; onClose: () => void; }> = ({ student, onClose }) => {
     const [qrCodeUrl, setQrCodeUrl] = useState('');

@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { useData } from '../context/AppContext';
 import { LogEntry } from '../types';
